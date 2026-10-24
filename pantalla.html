@@ -48,10 +48,24 @@
                border: 2px solid color-mix(in srgb, var(--anillo) 70%, transparent); }
   @keyframes girar { to { transform: rotate(360deg); } }
   .cara { position: relative; width: 82%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #15130F; animation: respirar 5s ease-in-out infinite; }
-  .cara img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Movimiento: .mov se balancea despacio (vivo); la imagen "habla" con --boca (0–1) que mueve JS */
+  .cara .mov { position: absolute; inset: 0; transform-origin: 50% 85%; animation: balanceo 7s ease-in-out infinite; }
+  @keyframes balanceo {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1.04); }
+    30% { transform: translate(-1.2%, -1%) rotate(-1.4deg) scale(1.05); }
+    65% { transform: translate(1%, -.4%) rotate(1.1deg) scale(1.045); }
+  }
+  .cara img, .cara video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 50% 90%;
+                           transform: translateY(calc(var(--boca, 0) * -1.6%)) scale(calc(1 + var(--boca, 0) * .018)) rotate(calc(var(--boca, 0) * .8deg));
+                           transition: transform .09s ease-out; }
+  .cara video { display: none; }
+  .cara.con-video img { display: none; }
+  .cara.con-video video.activo { display: block; }
+  .cara.con-video video { --boca: 0; }
   .cara .sin-foto { position: absolute; inset: 0; display: none; place-items: center; font-size: 30vmin; }
   .cara.falta img { display: none; } .cara.falta .sin-foto { display: grid; }
   @keyframes respirar { 50% { transform: scale(1.015); } }
+  body.durmiendo .cara .mov { animation-duration: 12s; }
   body.hablando .anillo.a3 { animation: latir .45s ease-in-out infinite alternate; }
   @keyframes latir { to { transform: scale(1.04); opacity: .75; } }
   body.durmiendo .cara { filter: brightness(.55) saturate(.7); }
@@ -83,7 +97,14 @@
   <div class="centro">
     <div class="orbe">
       <div class="anillo a1"></div><div class="anillo a2"></div><div class="anillo a3"></div>
-      <div class="cara" id="cara"><img id="foto" src="img/curro-cara.png" alt="Curro"><div class="sin-foto">🐾</div></div>
+      <div class="cara" id="cara">
+        <div class="mov">
+          <img id="foto" src="img/curro-cara.png" alt="Curro">
+          <video id="v-quieto" src="video/curro-quieto.mp4" muted loop playsinline autoplay preload="auto"></video>
+          <video id="v-habla" src="video/curro-habla.mp4" muted loop playsinline preload="auto"></video>
+        </div>
+        <div class="sin-foto">🐾</div>
+      </div>
     </div>
     <div class="estado"><i></i><span id="estado">Despertando</span></div>
     <div class="dice" id="dice"></div>
@@ -147,20 +168,49 @@ function hablar(texto) {
   u.lang = "es-ES"; u.rate = 1.12; u.pitch = 1.05;  // un pelín más rápido, como se habla en Sevilla
   const v = vozEspanola(); if (v) u.voice = v;
   u.onstart = () => { hablandoHasta = Date.now() + 60000; aplicarEstado(); };
-  u.onend = () => { hablandoHasta = 0; aplicarEstado(); };
+  u.onend = () => { hablandoHasta = Date.now() + 300; aplicarEstado(); };
   speechSynthesis.speak(u);
 }
 
-function escribir(texto) {
+// --boca mueve la cabeza al "hablar": se abre en las letras y se cierra en espacios y signos.
+const boca = v => caraEl.style.setProperty("--boca", v.toFixed(2));
+
+// Escribe la frase letra a letra. Con conBoca, a ritmo de habla y moviendo a Curro.
+function escribir(texto, conBoca) {
   clearInterval(escribiendo);
   const el = document.getElementById("dice");
-  let i = 0;
+  let i = 0, pausa = 0;
   el.innerHTML = '<span></span><span class="cursor"></span>';
   const span = el.firstChild;
   escribiendo = setInterval(() => {
-    span.textContent = texto.slice(0, ++i);
-    if (i >= texto.length) { clearInterval(escribiendo); setTimeout(() => el.querySelector(".cursor")?.remove(), 1500); }
-  }, 28);
+    if (pausa > 0) { pausa--; boca(0); return; }
+    const c = texto[i++];
+    span.textContent = texto.slice(0, i);
+    if (conBoca) {
+      if (/[.,;:!?…]/.test(c)) { boca(0); pausa = c === "," ? 3 : 6; }
+      else if (/\s/.test(c)) boca(.15);
+      else boca(i % 2 ? .35 + Math.random() * .65 : Math.random() * .3);
+    }
+    if (i >= texto.length) {
+      clearInterval(escribiendo); boca(0);
+      if (conBoca && !window.speechSynthesis?.speaking) { hablandoHasta = Date.now() + 400; }
+      setTimeout(() => el.querySelector(".cursor")?.remove(), 1500);
+    }
+  }, conBoca ? 55 : 28);
+}
+
+// Vídeos opcionales: video/curro-quieto.mp4 y video/curro-habla.mp4. Si están los dos, sustituyen a la foto.
+const vQuieto = document.getElementById("v-quieto"), vHabla = document.getElementById("v-habla");
+let videosListos = 0;
+[vQuieto, vHabla].forEach(v => v.addEventListener("loadeddata", () => {
+  if (++videosListos === 2) { caraEl.classList.add("con-video"); aplicarEstado(); }
+}, { once: true }));
+function aplicarVideo(animo) {
+  if (!caraEl.classList.contains("con-video")) return;
+  const habla = animo === "hablando";
+  vHabla.classList.toggle("activo", habla);
+  vQuieto.classList.toggle("activo", !habla);
+  (habla ? vHabla : vQuieto).play().catch(() => {});
 }
 
 let datos = {};
@@ -177,6 +227,7 @@ function aplicarEstado() {
   document.getElementById("estado").textContent = ESTADOS[animo] || "";
   const quiero = `img/curro-${animo}.png`;
   if (fotoActual !== quiero) { fotoActual = quiero; foto.src = quiero; }
+  aplicarVideo(animo);
 }
 
 function pintar(d) {
@@ -192,11 +243,12 @@ function pintar(d) {
   const nuevo = d.dicho != null ? d.dicho !== ultimoDicho : frase !== ultimaFrase;
   const primeraVez = ultimoDicho === null && ultimaFrase === null;
   if (nuevo) {
-    escribir(frase);
-    if (!primeraVez && d.animo !== "pensando") {
+    const habla = !primeraVez && d.animo !== "pensando";
+    if (habla) {
+      hablandoHasta = Date.now() + 60000;  // hasta que acabe de escribir (o de hablar, con voz)
       if (vozActiva) hablar(frase);
-      else { hablandoHasta = Date.now() + Math.min(12000, frase.length * 60); }
     }
+    escribir(frase, habla);
   }
   ultimoDicho = d.dicho ?? null; ultimaFrase = frase;
   aplicarEstado();
