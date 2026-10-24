@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07080A">
+<meta name="robots" content="noindex">
+<title>Curro</title>
+<link rel="icon" href="img/curro-cara.png">
+<link rel="stylesheet" href="fuentes/fuentes.css">
+<style>
+  :root {
+    --fondo: #07080A; --texto: #F5EBDB; --suave: #9C9484; --ambar: #F5A524; --rojo: #E5533D; --azul: #6F8BFF; --verde: #7BC86C;
+    --anillo: var(--ambar); --vel: 14s;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: radial-gradient(70% 55% at 50% 38%, #1A1610 0%, var(--fondo) 70%); color: var(--texto);
+    font-family: Inter, system-ui, sans-serif; overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent;
+    display: grid; grid-template-rows: auto 1fr auto; min-height: 100dvh; padding: max(14px, env(safe-area-inset-top)) 16px max(14px, env(safe-area-inset-bottom));
+  }
+  body.pensando { --anillo: var(--ambar); --vel: 2.2s; }
+  body.hablando { --anillo: #FFD27A; }
+  body.preocupado { --anillo: var(--rojo); }
+  body.contento { --anillo: var(--verde); }
+  body.durmiendo { --anillo: var(--azul); --vel: 40s; background: radial-gradient(70% 55% at 50% 38%, #10131E 0%, #05060A 70%); }
+
+  /* Barra superior */
+  .barra { display: flex; justify-content: space-between; align-items: center; font: 600 12px "JetBrains Mono", ui-monospace, monospace; color: var(--suave); }
+  .barra b { font: 700 20px Fraunces, Georgia, serif; color: var(--texto); letter-spacing: .01em; }
+  .barra b span { font: 800 10px Inter, sans-serif; background: var(--ambar); color: #1A1305; border-radius: 5px; padding: 2px 5px; margin-left: 4px; vertical-align: 3px; }
+  .botones { display: flex; gap: 8px; }
+  .botones button { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: var(--texto); border-radius: 999px;
+                    padding: 7px 11px; font: 600 12px Inter, sans-serif; cursor: pointer; }
+  .botones button.activo { background: var(--ambar); color: #1A1305; border-color: var(--ambar); }
+
+  /* Centro: anillos y cara */
+  .centro { display: grid; place-items: center; align-content: center; gap: clamp(14px, 3vh, 26px); }
+  .orbe { position: relative; width: min(74vw, 46vh); aspect-ratio: 1; display: grid; place-items: center; }
+  .anillo { position: absolute; inset: 0; border-radius: 50%; }
+  .anillo.a1 { background: conic-gradient(from 0deg, transparent 0 55%, var(--anillo) 75%, transparent 76% 100%);
+               -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+                       mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+               animation: girar var(--vel) linear infinite; filter: drop-shadow(0 0 8px var(--anillo)); }
+  .anillo.a2 { inset: 5%; border: 1px dashed color-mix(in srgb, var(--anillo) 45%, transparent); animation: girar calc(var(--vel) * 2.5) linear infinite reverse; }
+  .anillo.a3 { inset: 9%; box-shadow: 0 0 60px color-mix(in srgb, var(--anillo) 35%, transparent), inset 0 0 40px color-mix(in srgb, var(--anillo) 20%, transparent);
+               border: 2px solid color-mix(in srgb, var(--anillo) 70%, transparent); }
+  @keyframes girar { to { transform: rotate(360deg); } }
+  .cara { position: relative; width: 82%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #15130F; animation: respirar 5s ease-in-out infinite; }
+  .cara img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cara .sin-foto { position: absolute; inset: 0; display: none; place-items: center; font-size: 30vmin; }
+  .cara.falta img { display: none; } .cara.falta .sin-foto { display: grid; }
+  @keyframes respirar { 50% { transform: scale(1.015); } }
+  body.hablando .anillo.a3 { animation: latir .45s ease-in-out infinite alternate; }
+  @keyframes latir { to { transform: scale(1.04); opacity: .75; } }
+  body.durmiendo .cara { filter: brightness(.55) saturate(.7); }
+
+  .estado { display: flex; align-items: center; gap: 8px; font: 700 12px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--anillo); }
+  .estado i { width: 8px; height: 8px; border-radius: 50%; background: var(--anillo); box-shadow: 0 0 10px var(--anillo); animation: parpadeo 1.6s infinite; }
+  @keyframes parpadeo { 50% { opacity: .3; } }
+  .dice { max-width: 680px; min-height: 4.2em; text-align: center; font: 600 clamp(17px, 2.6vh, 24px)/1.4 Inter, sans-serif; padding: 0 6px; }
+  .dice .cursor { display: inline-block; width: .5em; height: 1em; background: var(--anillo); vertical-align: -2px; margin-left: 2px; animation: parpadeo .8s infinite; }
+
+  /* Abajo */
+  .datos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 560px; width: 100%; margin: 0 auto; }
+  .datos div { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 10px; text-align: center; }
+  .datos b { display: block; font: 700 clamp(18px, 3vh, 26px) Fraunces, Georgia, serif; }
+  .datos small { color: var(--suave); font-size: 11px; }
+  .datos .poco b { color: var(--rojo); }
+  @media (prefers-reduced-motion: reduce) { .anillo, .cara, .estado i { animation: none !important; } }
+</style>
+</head>
+<body class="normal">
+  <div class="barra">
+    <b>Curro<span>IA</span></b>
+    <div class="botones">
+      <button id="b-voz" title="Que Curro hable en voz alta">🔇 Voz</button>
+      <button id="b-pantalla" title="Pantalla completa">⛶</button>
+    </div>
+  </div>
+
+  <div class="centro">
+    <div class="orbe">
+      <div class="anillo a1"></div><div class="anillo a2"></div><div class="anillo a3"></div>
+      <div class="cara" id="cara"><img id="foto" src="img/curro-cara.png" alt="Curro"><div class="sin-foto">🐾</div></div>
+    </div>
+    <div class="estado"><i></i><span id="estado">Despertando</span></div>
+    <div class="dice" id="dice"></div>
+  </div>
+
+  <div class="datos">
+    <div><b id="dia">–</b><small>día de vida</small></div>
+    <div id="caja-dinero"><b id="dinero">–</b><small>euros me quedan</small></div>
+    <div><b id="turnos">–</b><small>turnos trabajados</small></div>
+  </div>
+
+<script>
+// Datos: en el móvil, cara.json (privado, incluye lo que habla por Telegram).
+// En la web pública, publico.json (solo datos públicos).
+const FUENTES = ["cara.json", "publico.json"];
+const ESTADOS = { normal: "Buscando curro", contento: "De buen humor", preocupado: "Preocupado",
+                  pensando: "Pensando · cuesta dinero", hablando: "Hablando", durmiendo: "Durmiendo" };
+const caraEl = document.getElementById("cara"), foto = document.getElementById("foto");
+let vozActiva = false, ultimoDicho = null, ultimaFrase = null, escribiendo = null, hablandoHasta = 0, fotoActual = "";
+
+try { vozActiva = localStorage.getItem("curro-voz") === "1"; } catch {}
+const bVoz = document.getElementById("b-voz");
+const pintarVoz = () => { bVoz.textContent = vozActiva ? "🔊 Voz" : "🔇 Voz"; bVoz.classList.toggle("activo", vozActiva); };
+bVoz.onclick = () => {
+  vozActiva = !vozActiva; pintarVoz();
+  try { localStorage.setItem("curro-voz", vozActiva ? "1" : "0"); } catch {}
+  if (vozActiva) hablar("Hola, manada. Ya puedo hablar.");
+  else speechSynthesis.cancel();
+};
+pintarVoz();
+document.getElementById("b-pantalla").onclick = () =>
+  document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.();
+
+// Que la pantalla no se apague
+async function noDormir() { try { await navigator.wakeLock?.request("screen"); } catch {} }
+noDormir(); document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && noDormir());
+
+foto.onerror = () => {
+  if (!foto.src.endsWith("curro-cara.png")) foto.src = "img/curro-cara.png";
+  else caraEl.classList.add("falta");
+};
+
+function vozEspanola() {
+  const voces = speechSynthesis.getVoices();
+  return voces.find(v => v.lang === "es-ES" && /male|hombre|pablo|alvaro|jorge/i.test(v.name))
+      || voces.find(v => v.lang === "es-ES") || voces.find(v => v.lang.startsWith("es"));
+}
+function hablar(texto) {
+  if (!vozActiva || !("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(texto.replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu, ""));
+  u.lang = "es-ES"; u.rate = 1.03; u.pitch = 1.05;
+  const v = vozEspanola(); if (v) u.voice = v;
+  u.onstart = () => { hablandoHasta = Date.now() + 60000; aplicarEstado(); };
+  u.onend = () => { hablandoHasta = 0; aplicarEstado(); };
+  speechSynthesis.speak(u);
+}
+
+function escribir(texto) {
+  clearInterval(escribiendo);
+  const el = document.getElementById("dice");
+  let i = 0;
+  el.innerHTML = '<span></span><span class="cursor"></span>';
+  const span = el.firstChild;
+  escribiendo = setInterval(() => {
+    span.textContent = texto.slice(0, ++i);
+    if (i >= texto.length) { clearInterval(escribiendo); setTimeout(() => el.querySelector(".cursor")?.remove(), 1500); }
+  }, 28);
+}
+
+let datos = {};
+function animoActual() {
+  const h = new Date().getHours();
+  if (Date.now() < hablandoHasta) return "hablando";
+  if (datos.animo === "pensando") return "pensando";
+  if (h >= 23 || h < 8) return "durmiendo";
+  return datos.animo && datos.animo !== "hablando" ? datos.animo : "normal";
+}
+function aplicarEstado() {
+  const animo = animoActual();
+  document.body.className = animo;
+  document.getElementById("estado").textContent = ESTADOS[animo] || "";
+  const quiero = `img/curro-${animo}.png`;
+  if (fotoActual !== quiero) { fotoActual = quiero; foto.src = quiero; }
+}
+
+function pintar(d) {
+  if (!d.animo && Number(d.quedan) < 20) d.animo = "preocupado";  // publico.json no trae ánimo
+  datos = d;
+  document.getElementById("dia").textContent = d.dia ?? "–";
+  const quedan = Number(d.quedan ?? 100);
+  document.getElementById("dinero").textContent = quedan.toFixed(2).replace(".", ",");
+  document.getElementById("caja-dinero").classList.toggle("poco", quedan < 20);
+  document.getElementById("turnos").textContent = d.turnos ?? 0;
+
+  const frase = d.frase || "Hola, manada. Soy Curro.";
+  const nuevo = d.dicho != null ? d.dicho !== ultimoDicho : frase !== ultimaFrase;
+  const primeraVez = ultimoDicho === null && ultimaFrase === null;
+  if (nuevo) {
+    escribir(frase);
+    if (!primeraVez && d.animo !== "pensando") {
+      if (vozActiva) hablar(frase);
+      else { hablandoHasta = Date.now() + Math.min(12000, frase.length * 60); }
+    }
+  }
+  ultimoDicho = d.dicho ?? null; ultimaFrase = frase;
+  aplicarEstado();
+}
+
+async function actualizar() {
+  for (const fuente of FUENTES) {
+    try {
+      const r = await fetch(`${fuente}?t=${Date.now()}`, { cache: "no-store" });
+      if (r.ok) { pintar(await r.json()); return; }
+    } catch {}
+  }
+  pintar({ dia: 1, quedan: 100, turnos: 0, frase: "Hola, manada. Soy Curro y vivo en un móvil." });
+}
+
+actualizar();
+setInterval(actualizar, 5000);
+setInterval(aplicarEstado, 1000);
+</script>
+</body>
+</html>
