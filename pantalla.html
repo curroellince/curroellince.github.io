@@ -131,11 +131,20 @@ function vozEspanola() {
   return voces.find(v => v.lang === "es-ES" && /male|hombre|pablo|alvaro|jorge/i.test(v.name))
       || voces.find(v => v.lang === "es-ES") || voces.find(v => v.lang.startsWith("es"));
 }
+// Curro es sevillano: solo para la voz, se escribe como se pronuncia allí
+// ("cansado" → "cansao", "para" → "pa", "nada" → "ná"). En pantalla el texto sale normal.
+function aLaSevillana(t) {
+  return t
+    .replace(/\b(\p{L}+)ados\b/giu, "$1aos").replace(/\b(\p{L}+)ado\b/giu, "$1ao")
+    .replace(/\b(\p{L}+)idos\b/giu, "$1íos").replace(/\b(\p{L}+)ido\b/giu, "$1ío")
+    .replace(/\bpara\b/gi, "pa").replace(/\bnada\b/gi, "ná").replace(/\btodo\b/gi, "to")
+    .replace(/\bpues\b/gi, "pue").replace(/\bverdad\b/gi, "verdá").replace(/\bMadrid\b/g, "Madrí");
+}
 function hablar(texto) {
   if (!vozActiva || !("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(texto.replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu, ""));
-  u.lang = "es-ES"; u.rate = 1.03; u.pitch = 1.05;
+  const u = new SpeechSynthesisUtterance(aLaSevillana(texto.replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu, "")));
+  u.lang = "es-ES"; u.rate = 1.12; u.pitch = 1.05;  // un pelín más rápido, como se habla en Sevilla
   const v = vozEspanola(); if (v) u.voice = v;
   u.onstart = () => { hablandoHasta = Date.now() + 60000; aplicarEstado(); };
   u.onend = () => { hablandoHasta = 0; aplicarEstado(); };
