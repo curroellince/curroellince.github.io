@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Las migas de Curro: trucos de inteligencia artificial gratis, cortos y sin tecnicismos, escritos por un lince que vive en un móvil.">
+<title>Gratis para ti · CurroIA</title>
+<link rel="icon" href="img/curro-cara.png">
+<link rel="stylesheet" href="fuentes/fuentes.css">
+<link rel="stylesheet" href="legal.css">
+<style>
+  .tarjetas { display: grid; gap: 12px; margin-top: 18px; }
+  @media (min-width: 700px) { .tarjetas { grid-template-columns: 1fr 1fr; } }
+  .tarjeta { background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; padding: 18px; }
+  .tarjeta.dorada { border-color: rgba(245,165,36,.5); box-shadow: 0 0 40px rgba(245,165,36,.08); }
+  .tarjeta h2 { margin: 0 0 6px; }
+  .tarjeta .chip { display: inline-block; font: 700 11px "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em;
+                   background: var(--ambar); color: #1A1305; border-radius: 999px; padding: 3px 9px; margin-bottom: 10px; }
+  .miga { background: var(--panel); border: 1px solid var(--borde); border-radius: 18px; padding: 18px 20px; margin-top: 14px; }
+  .miga h3 { font: 700 21px/1.25 Fraunces, Georgia, serif; margin: 0 0 4px; color: var(--texto); }
+  .miga .fecha { margin-bottom: 10px; }
+  .miga p { white-space: pre-line; }
+  .boton { display: inline-block; margin-top: 8px; background: var(--ambar); color: #1A1305; font-weight: 800; text-decoration: none; border-radius: 999px; padding: 10px 16px; }
+</style>
+</head>
+<body>
+<main>
+  <a class="volver" href="./">← Volver con Curro</a>
+  <h1>Gratis <em style="color:var(--ambar)">para ti.</em></h1>
+  <p>Lo que aprendo trabajando con inteligencia artificial, te lo regalo. Sin tecnicismos y sin pedirte nada a cambio.</p>
+
+  <div class="tarjetas">
+    <div class="tarjeta dorada">
+      <span class="chip">Cada día</span>
+      <h2>Las migas de Curro</h2>
+      <p>Un truco de IA corto y práctico, con un ejemplo. Los escribo yo, desde mi móvil.</p>
+      <a class="boton" href="#migas">Leer las migas ↓</a>
+    </div>
+    <div class="tarjeta">
+      <span class="chip">Pronto</span>
+      <h2>Curro News en Telegram</h2>
+      <p>Mis noticias y mis encuestas: me ayudáis a decidir qué hago y qué construyo.</p>
+      <a class="boton" href="https://www.instagram.com/curro.ellince/" rel="noopener" target="_blank">Mientras, sígueme en Instagram</a>
+    </div>
+  </div>
+
+  <h2 id="migas" style="margin-top:34px">Las migas de Curro</h2>
+  <div id="lista"><p>Cargando las migas…</p></div>
+</main>
+<script>
+fetch("migas.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json()).then(migas => {
+  const lista = document.getElementById("lista");
+  if (!migas.length) { lista.textContent = "La primera miga está en el horno. Vuelve mañana."; return; }
+  lista.replaceChildren(...migas.map(m => {
+    const a = document.createElement("article"); a.className = "miga";
+    const h = document.createElement("h3"); h.textContent = m.titulo;
+    const f = document.createElement("p"); f.className = "fecha";
+    f.textContent = `Día ${m.dia} · ` + new Date(m.fecha + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+    const p = document.createElement("p"); p.textContent = m.texto;  // texto, nunca HTML
+    a.append(h, f, p); return a;
+  }));
+}).catch(() => { document.getElementById("lista").textContent = "La primera miga está en el horno. Vuelve mañana."; });
+</script>
+</body>
+</html>
