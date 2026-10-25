@@ -21,5 +21,48 @@
     }
   ],
   "laboratorio": [],
-  "actualizado": "2026-10-25T15:00:26"
+  "equipo": [
+    {
+      "rol": "investigador",
+      "emoji": "🔎",
+      "nombre": "Investigador",
+      "horas": [
+        "8:00",
+        "14:00"
+      ],
+      "ultimo": "Todavía no ha trabajado.",
+      "fecha": null
+    },
+    {
+      "rol": "redactor",
+      "emoji": "✍️",
+      "nombre": "Redactor",
+      "horas": [
+        "11:00"
+      ],
+      "ultimo": "Todavía no ha trabajado.",
+      "fecha": null
+    },
+    {
+      "rol": "community",
+      "emoji": "💬",
+      "nombre": "Community manager",
+      "horas": [
+        "17:00"
+      ],
+      "ultimo": "Todavía no ha trabajado.",
+      "fecha": null
+    },
+    {
+      "rol": "contable",
+      "emoji": "📊",
+      "nombre": "Contable",
+      "horas": [
+        "20:00"
+      ],
+      "ultimo": "Todavía no ha trabajado.",
+      "fecha": null
+    }
+  ],
+  "actualizado": "2026-10-25T15:09:43"
 }
