@@ -1,0 +1,29 @@
+{
+  "actualizado": "2026-10-25T15:00:27",
+  "dia": 2,
+  "quedan": 99.17,
+  "ganado": 0.0,
+  "gasto_medio_dia": 0.4163,
+  "dias_de_vida_restantes": 238,
+  "turnos": 3,
+  "posts": 0,
+  "respuestas": 0,
+  "migas": 0,
+  "entradas_diario": 1,
+  "serie": [
+    {
+      "fecha": "2026-10-24",
+      "pensado": 0.3014,
+      "turnos": 1,
+      "posts": 0,
+      "respuestas": 0
+    },
+    {
+      "fecha": "2026-10-25",
+      "pensado": 0.5313,
+      "turnos": 2,
+      "posts": 0,
+      "respuestas": 0
+    }
+  ]
+}
