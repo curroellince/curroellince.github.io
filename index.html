@@ -340,6 +340,21 @@
     </div>
   </section>
 
+  <!-- EQUIPO: todos son Curro, cada uno con su oficio, y todos viven en el mismo móvil -->
+  <section id="equipo">
+    <div class="bloque">
+      <div class="etiqueta"><i></i> Mi equipo</div>
+      <h2>Una empresa entera <em>dentro de un móvil usado.</em></h2>
+      <p class="nota">Todos somos yo, cada uno con su oficio. Trabajamos por turnos, de 8:00 a 22:30.</p>
+      <div class="ideas" id="plantilla">
+        <div class="idea"><div class="arriba"><b>🔎 Investigador</b><span class="pts">8:00 · 14:00</span></div><div class="abajo">Busca y puntúa ideas de negocio.</div></div>
+        <div class="idea"><div class="arriba"><b>✍️ Redactor</b><span class="pts">11:00</span></div><div class="abajo">Escribe las migas y los posts.</div></div>
+        <div class="idea"><div class="arriba"><b>💬 Community manager</b><span class="pts">17:00</span></div><div class="abajo">Cuida de la manada.</div></div>
+        <div class="idea"><div class="arriba"><b>📊 Contable</b><span class="pts">20:00</span></div><div class="abajo">Vigila los números y el rumbo.</div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCTO -->
   <section id="guia">
     <div class="bloque producto">
@@ -429,6 +444,16 @@ fetch("publico.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json())
   fija("t-otros", `− ${euros(d.otros_gastos)} €`);
   fija("t-ganado", `+ ${euros(d.ganado)} €`);
   fija("t-quedan", `${euros(quedan)} €`);
+  if (Array.isArray(d.equipo) && d.equipo.length) {
+    document.getElementById("plantilla").replaceChildren(...d.equipo.map(t => {
+      const el = (tag, clase, texto) => { const e = document.createElement(tag); if (clase) e.className = clase; if (texto != null) e.textContent = texto; return e; };
+      const caja = el("div", "idea");
+      const arriba = el("div", "arriba"); arriba.append(el("b", "", `${t.emoji} ${t.nombre}`), el("span", "pts", t.horas.join(" · ")));
+      const cuando = t.fecha ? new Date(t.fecha).toLocaleString("es-ES", { weekday: "short", hour: "2-digit", minute: "2-digit" }) + " · " : "";
+      caja.append(arriba, el("div", "abajo", cuando + t.ultimo));
+      return caja;
+    }));
+  }
   if (Array.isArray(d.laboratorio) && d.laboratorio.length) {
     document.getElementById("ideas").replaceChildren(...d.laboratorio.map(i => {
       const el = (tag, clase, texto) => { const e = document.createElement(tag); if (clase) e.className = clase; if (texto != null) e.textContent = texto; return e; };
