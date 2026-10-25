@@ -89,7 +89,7 @@
   <div class="barra">
     <b>Curro<span>IA</span></b>
     <div class="botones">
-      <button id="b-voz" title="Que Curro hable en voz alta">🔇 Voz</button>
+      <button id="b-voz" title="Que Curro hable en voz alta" hidden>🔇 Voz</button>
       <button id="b-pantalla" title="Pantalla completa">⛶</button>
     </div>
   </div>
@@ -125,7 +125,8 @@ const ESTADOS = { normal: "Buscando curro", contento: "De buen humor", preocupad
 const caraEl = document.getElementById("cara"), foto = document.getElementById("foto");
 let vozActiva = false, ultimoDicho = null, ultimaFrase = null, escribiendo = null, hablandoHasta = 0, fotoActual = "";
 
-try { vozActiva = localStorage.getItem("curro-voz") === "1"; } catch {}
+// Voz desactivada: la del sistema no gusta. Se vuelve a activar cuando haya una voz buena.
+try { localStorage.removeItem("curro-voz"); } catch {}
 const bVoz = document.getElementById("b-voz");
 const pintarVoz = () => { bVoz.textContent = vozActiva ? "🔊 Voz" : "🔇 Voz"; bVoz.classList.toggle("activo", vozActiva); };
 bVoz.onclick = () => {
