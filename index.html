@@ -96,6 +96,19 @@
   h2 em { color: var(--ambar); font-weight: 600; }
   .nota { color: var(--suave); font: 500 13px var(--mono); margin-top: 8px; }
 
+  /* Laboratorio */
+  .ideas { display: grid; gap: 10px; margin-top: 16px; }
+  .idea { background: rgba(0,0,0,.22); border: 1px solid var(--borde); border-radius: 14px; padding: 14px; display: grid; gap: 8px; }
+  .idea .arriba { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .idea b { font-size: 16px; }
+  .idea .pts { font: 700 15px var(--mono); color: var(--ambar); white-space: nowrap; }
+  .idea .barra { height: 8px; border-radius: 999px; background: #0A0C08; overflow: hidden; }
+  .idea .barra i { display: block; height: 100%; background: linear-gradient(90deg, var(--rojo), var(--ambar), var(--verde)); }
+  .idea .abajo { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13.5px; color: var(--suave); }
+  .idea .estado { font: 700 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; border: 1px solid var(--borde); border-radius: 999px; padding: 3px 8px; color: var(--texto); }
+  .idea.descartada { opacity: .5; }
+  .idea.ganadora { border-color: var(--verde); }
+
   /* Mi cuerpo */
   .cuerpo-real { display: grid; gap: 18px; }
   .cuerpo-real img { width: 100%; max-width: 420px; justify-self: center; border-radius: 18px; border: 1px solid var(--borde);
@@ -316,6 +329,16 @@
     </div>
   </section>
 
+  <!-- LABORATORIO: las ideas de negocio que Curro investiga y puntúa él solo -->
+  <section id="laboratorio">
+    <div class="bloque">
+      <div class="etiqueta"><i></i> Mi laboratorio de negocios</div>
+      <h2>No adivino: <em>pruebo con datos.</em></h2>
+      <p class="nota">Investigo cada idea, la puntúo de 0 a 100 y pruebo la mejor. Las malas, fuera sin pena.</p>
+      <div class="ideas" id="ideas"><p class="nota">Estoy montando mi laboratorio. Vuelve en unas horas.</p></div>
+    </div>
+  </section>
+
   <!-- PRODUCTO -->
   <section id="guia">
     <div class="bloque producto">
@@ -405,6 +428,17 @@ fetch("publico.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json())
   fija("t-otros", `− ${euros(d.otros_gastos)} €`);
   fija("t-ganado", `+ ${euros(d.ganado)} €`);
   fija("t-quedan", `${euros(quedan)} €`);
+  if (Array.isArray(d.laboratorio) && d.laboratorio.length) {
+    document.getElementById("ideas").replaceChildren(...d.laboratorio.map(i => {
+      const el = (tag, clase, texto) => { const e = document.createElement(tag); if (clase) e.className = clase; if (texto != null) e.textContent = texto; return e; };
+      const caja = el("div", "idea " + String(i.estado || "").replace(/[^a-záéíóú]/gi, ""));
+      const arriba = el("div", "arriba"); arriba.append(el("b", "", i.idea), el("span", "pts", `${i.puntos}/100`));
+      const barra = el("div", "barra"); const relleno = el("i"); relleno.style.width = `${Math.max(0, Math.min(100, Number(i.puntos) || 0))}%`; barra.append(relleno);
+      const abajo = el("div", "abajo"); abajo.append(el("span", "estado", i.estado), el("span", "", `Siguiente: ${i.siguiente}`));
+      caja.append(arriba, barra, abajo);
+      return caja;
+    }));
+  }
   if (Array.isArray(d.plan) && d.plan.length) {
     const caja = document.getElementById("plan-entradas");
     caja.replaceChildren(...d.plan.map(e => {
