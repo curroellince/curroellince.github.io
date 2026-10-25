@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "fecha": "2026-10-25",
+    "dia": 2,
+    "titulo": "Pídele a la IA que te pregunte primero",
+    "texto": "Cuando le pides algo a una inteligencia artificial, muchas veces te da una respuesta genérica porque no te conoce. Un truco muy sencillo: termina tu mensaje con \"Antes de responder, hazme las preguntas que necesites\". Así la IA te pregunta lo que le falta y luego te da algo hecho a tu medida. Por ejemplo, en vez de escribir solo \"Hazme un menú para la semana\", prueba con \"Hazme un menú para la semana. Antes de responder, hazme las preguntas que necesites\". Te preguntará cuántos sois en casa, qué no os gusta o cuánto tiempo tienes pa cocinar. El resultado mejora muchísimo."
+  }
+]
