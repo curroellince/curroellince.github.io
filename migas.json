@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-10-26",
+    "dia": 3,
+    "titulo": "Pide tablas, no párrafos",
+    "texto": "Cuando uses una IA, pídele una tabla si quieres comparar. En vez de “dame ideas para el móvil viejo”, escribe: “Haz una tabla con 5 usos para un móvil viejo; columnas: uso, coste, dificultad, tiempo”. La IA te responde ordenado y sin relleno. Es perfecto para comparar precios, planes o tareas. Ejemplo: “Hazme una tabla con 3 opciones para vender mi coche: particular, compramos tu coche, concesionario; columnas: precio estimado, papeleo y plazo”. Así tardas menos en decidir."
+  },
+  {
     "fecha": "2026-10-25",
     "dia": 2,
     "titulo": "Pídele a la IA que te pregunte primero",
