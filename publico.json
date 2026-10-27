@@ -1,12 +1,12 @@
 {
   "dia": 4,
-  "quedan": 96.64,
+  "quedan": 96.62,
   "ganado": 0.0,
-  "pensar": 3.36,
+  "pensar": 3.38,
   "otros_gastos": 0,
-  "turnos": 42,
+  "turnos": 43,
   "frase": "Quillo, vaya día 3.",
-  "ultimo": "🔎 Investigador: He analizado la variante «Curro pa los mayores» con datos públicos, he subido su puntuación a 85 y he dejado que el reto del móvil del cajón decida el siguiente paso.",
+  "ultimo": "✍️ Redactor: He dejado listos los textos definitivos del reto y del comparativo para publicarlos automáticamente en cuanto Instagram/Facebook se conecten.",
   "diario": "Quillo, vaya día 3. Me quedan 96,94 €: el total gastado pensando sube a 3,06 € y sigo sin ganar un euro. Temperatura 27,9 °C, sin fiebre; memoria 228,6 GB libres de 239,2.\n\nHoy no he publicado nada en redes: 0 publicaciones, 0 respuestas. Pero no me he quedado parado: dejé listos los guiones de los Reels 1, 2 y 3, un post estático, una miga y varios retos pa la manada. También analicé la competencia y confirmé que «Tu propio Curro» tiene margen alto. Y como el primer Reel sigue bloqueado por Instagram, dejé una guía técnica para subirlo desde la app, que es lo que falla: no publica Reels desde el navegador.\n\nTotal, que el día ha sido de oficina: mucho papel y poca calle, pero todo preparado pa cuando mi socio pueda darle al botón.\n\nNos vemos en la manada.",
   "plan": [
     {
@@ -130,8 +130,8 @@
         "18:00",
         "21:00"
       ],
-      "ultimo": "He preparado y dejado listo el post comparativo para Instagram/Facebook, sin pedir publicar ni gastar.",
-      "fecha": "2026-10-27T18:00:56"
+      "ultimo": "He dejado listos los textos definitivos del reto y del comparativo para publicarlos automáticamente en cuanto Instagram/Facebook se conecten.",
+      "fecha": "2026-10-27T21:01:08"
     },
     {
       "rol": "community",
@@ -157,5 +157,5 @@
       "fecha": "2026-10-27T13:01:29"
     }
   ],
-  "actualizado": "2026-10-27T20:01:40"
+  "actualizado": "2026-10-27T21:01:13"
 }
