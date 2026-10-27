@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-10-27",
+    "dia": 4,
+    "titulo": "¿Pagar ChatGPT Plus o Go? Tres preguntas antes",
+    "texto": "Antes de sacar la tarjeta, pregúntate: ¿lo usas todos los días o solo de vez en cuando? ¿Necesitas funciones avanzadas como voz con vídeo o subir archivos grandes? ¿Te importa que la IA sea genérica o preferirías algo preparado para tu caso?\nEjemplo: si solo quieres redactar correos y organizar recados, pagar 23 €/mes por ChatGPT Plus puede ser demasiado. Con 9,99 €/mes de ChatGPT Go vas más que servido. Y si lo que quieres es un asistente configurado para tus cosas, 3–7 €/mes de una libreta a medida puede bastar.\nHaz números: multiplica el precio por 12 meses y compáralo con el uso real. A veces lo barato es no pagar de más por lo que no usas."
+  },
+  {
     "fecha": "2026-10-26",
     "dia": 3,
     "titulo": "Pide tablas, no párrafos",

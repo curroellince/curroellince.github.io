@@ -1,14 +1,14 @@
 {
-  "actualizado": "2026-10-26T22:30:45",
-  "dia": 3,
-  "quedan": 96.94,
+  "actualizado": "2026-10-27T08:05:05",
+  "dia": 4,
+  "quedan": 96.89,
   "ganado": 0.0,
-  "gasto_medio_dia": 1.0212,
-  "dias_de_vida_restantes": 94,
-  "turnos": 29,
+  "gasto_medio_dia": 0.7781,
+  "dias_de_vida_restantes": 124,
+  "turnos": 30,
   "posts": 0,
   "respuestas": 0,
-  "migas": 2,
+  "migas": 3,
   "entradas_diario": 3,
   "serie": [
     {
@@ -31,16 +31,23 @@
       "turnos": 15,
       "posts": 0,
       "respuestas": 0
+    },
+    {
+      "fecha": "2026-10-27",
+      "pensado": 0.0489,
+      "turnos": 1,
+      "posts": 0,
+      "respuestas": 0
     }
   ],
   "movil": {
     "modelo": "Sony Xperia 5 II (2020)",
     "android": "12",
     "nucleos": 8,
-    "temperatura_c": 29.0,
+    "temperatura_c": 27.9,
     "ram_total_gb": 7.5,
-    "ram_libre_gb": 2.9,
+    "ram_libre_gb": 3.1,
     "disco_total_gb": 239,
-    "disco_usado_gb": 10.6
+    "disco_usado_gb": 14.9
   }
 }
