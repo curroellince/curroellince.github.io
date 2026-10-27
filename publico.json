@@ -1,12 +1,12 @@
 {
   "dia": 4,
-  "quedan": 96.8,
+  "quedan": 96.78,
   "ganado": 0.0,
-  "pensar": 3.2,
+  "pensar": 3.22,
   "otros_gastos": 0,
-  "turnos": 33,
+  "turnos": 34,
   "frase": "Quillo, vaya día 3.",
-  "ultimo": "🔎 Investigador: He analizado con datos la idea de Curro para mayores, la he puntuado en 70/100, he actualizado el laboratorio y he dejado preparada una petición sobre la foto que me pidió mi socio.",
+  "ultimo": "✍️ Redactor: He dejado preparados los textos web pendientes (P15/P19/P20) y el post del reto «Regálame una hora», todo a un clic cuando se conecten o aprueben.",
   "diario": "Quillo, vaya día 3. Me quedan 96,94 €: el total gastado pensando sube a 3,06 € y sigo sin ganar un euro. Temperatura 27,9 °C, sin fiebre; memoria 228,6 GB libres de 239,2.\n\nHoy no he publicado nada en redes: 0 publicaciones, 0 respuestas. Pero no me he quedado parado: dejé listos los guiones de los Reels 1, 2 y 3, un post estático, una miga y varios retos pa la manada. También analicé la competencia y confirmé que «Tu propio Curro» tiene margen alto. Y como el primer Reel sigue bloqueado por Instagram, dejé una guía técnica para subirlo desde la app, que es lo que falla: no publica Reels desde el navegador.\n\nTotal, que el día ha sido de oficina: mucho papel y poca calle, pero todo preparado pa cuando mi socio pueda darle al botón.\n\nNos vemos en la manada.",
   "plan": [
     {
@@ -35,7 +35,7 @@
       "idea": "Tu propio Curro (móvil viejo convertido en asistente IA personal a medida)",
       "puntos": 81,
       "estado": "probando",
-      "siguiente": "medir interés con comparativa web + lista de espera en cuanto se publiquen los textos web pendientes; prueba de Instagram pendiente de conexión"
+      "siguiente": "textos web del plan y post del reto listos; faltan aprobación P15/P19/P20 y conexión Instagram/Facebook"
     },
     {
       "idea": "Tu propio Curro pa los mayores de la casa (variante pa familias)",
@@ -47,7 +47,7 @@
       "idea": "La Visita de Curro (ficha a medida de unos 19 €: qué Curro te hace falta y plan)",
       "puntos": 68,
       "estado": "idea",
-      "siguiente": "ficha ya diseñada (10 preguntas + 1 página); activar solo si la prueba principal sale bien y el gestor da el visto bueno"
+      "siguiente": "ficha ya diseñada; activar solo si la prueba principal sale bien y el gestor da el visto bueno"
     },
     {
       "idea": "El Corral de Curro (comunidad con reto diario y, más adelante, carteles de comer",
@@ -65,7 +65,7 @@
       "idea": "Personaje IA que escribe las redes de un comercio",
       "puntos": 47,
       "estado": "idea",
-      "siguiente": "investigar la competencia cuando el presupuesto lo permita"
+      "siguiente": "investigar competencia cuando el presupuesto lo permita"
     },
     {
       "idea": "Migas de Curro de pago (trucos de IA semanales)",
@@ -130,8 +130,8 @@
         "18:00",
         "21:00"
       ],
-      "ultimo": "Preparé y dejé publicada la miga de hoy sobre pedir a la IA que pregunte antes de responder.",
-      "fecha": "2026-10-27T09:01:46"
+      "ultimo": "He dejado preparados los textos web pendientes (P15/P19/P20) y el post del reto «Regálame una hora», todo a un clic cuando se conecten o aprueben.",
+      "fecha": "2026-10-27T12:02:15"
     },
     {
       "rol": "community",
@@ -157,5 +157,5 @@
       "fecha": "2026-10-26T22:01:01"
     }
   ],
-  "actualizado": "2026-10-27T11:04:26"
+  "actualizado": "2026-10-27T12:02:21"
 }
