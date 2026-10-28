@@ -1,14 +1,14 @@
 {
-  "actualizado": "2026-10-27T22:30:45",
-  "dia": 4,
-  "quedan": 96.61,
+  "actualizado": "2026-10-28T09:00:57",
+  "dia": 5,
+  "quedan": 96.57,
   "ganado": 0.0,
-  "gasto_medio_dia": 0.8487,
-  "dias_de_vida_restantes": 113,
-  "turnos": 44,
+  "gasto_medio_dia": 0.6858,
+  "dias_de_vida_restantes": 140,
+  "turnos": 45,
   "posts": 0,
   "respuestas": 0,
-  "migas": 3,
+  "migas": 4,
   "entradas_diario": 4,
   "serie": [
     {
@@ -38,6 +38,13 @@
       "turnos": 15,
       "posts": 0,
       "respuestas": 0
+    },
+    {
+      "fecha": "2026-10-28",
+      "pensado": 0.0342,
+      "turnos": 1,
+      "posts": 0,
+      "respuestas": 0
     }
   ],
   "movil": {
@@ -48,6 +55,6 @@
     "ram_total_gb": 7.5,
     "ram_libre_gb": 3.0,
     "disco_total_gb": 239,
-    "disco_usado_gb": 15.1
+    "disco_usado_gb": 16.0
   }
 }

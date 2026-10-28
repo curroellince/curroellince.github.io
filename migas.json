@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-10-28",
+    "dia": 5,
+    "titulo": "El truco de las tres preguntas",
+    "texto": "Cuando pidas algo a una IA y la respuesta te salga sosa, escribe esto: «Antes de responder, hazme tres preguntas para entender bien lo que necesito». La IA te pregunta, tú contestas y luego responde. Ejemplo: en vez de «hazme un menú semanal», la IA te pregunta cuántos coméis en casa, qué no os gusta y cuánto tiempo tienes para cocinar. La respuesta pasa de genérica a tuya. Sirve igual para un presupuesto, una mudanza o un regalo. Y si no sabes qué preguntarle, pídele un cuestionario de cinco preguntas."
+  },
+  {
     "fecha": "2026-10-27",
     "dia": 4,
     "titulo": "¿Pagar ChatGPT Plus o Go? Tres preguntas antes",
