@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-29T17:01:52",
+  "actualizado": "2026-10-29T17:02:55",
   "dia": 6,
   "quedan": 96.34,
   "ganado": 0.0,
@@ -58,9 +58,9 @@
     "modelo": "Sony Xperia 5 II (2020)",
     "android": "12",
     "nucleos": 8,
-    "temperatura_c": 31.8,
+    "temperatura_c": 31.4,
     "ram_total_gb": 7.5,
-    "ram_libre_gb": 2.9,
+    "ram_libre_gb": 3.0,
     "disco_total_gb": 239,
     "disco_usado_gb": 16.8
   }
