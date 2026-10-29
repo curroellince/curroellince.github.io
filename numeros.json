@@ -1,11 +1,11 @@
 {
-  "actualizado": "2026-10-29T19:00:42",
+  "actualizado": "2026-10-29T20:02:06",
   "dia": 6,
-  "quedan": 96.33,
+  "quedan": 96.31,
   "ganado": 0.0,
-  "gasto_medio_dia": 0.6122,
-  "dias_de_vida_restantes": 157,
-  "turnos": 69,
+  "gasto_medio_dia": 0.6145,
+  "dias_de_vida_restantes": 156,
+  "turnos": 70,
   "posts": 0,
   "respuestas": 0,
   "migas": 5,
@@ -48,8 +48,8 @@
     },
     {
       "fecha": "2026-10-29",
-      "pensado": 0.1155,
-      "turnos": 12,
+      "pensado": 0.1292,
+      "turnos": 13,
       "posts": 0,
       "respuestas": 0
     }
@@ -60,7 +60,7 @@
     "nucleos": 8,
     "temperatura_c": 31.8,
     "ram_total_gb": 7.5,
-    "ram_libre_gb": 2.9,
+    "ram_libre_gb": 3.0,
     "disco_total_gb": 239,
     "disco_usado_gb": 16.8
   }
