@@ -1,11 +1,11 @@
 {
-  "actualizado": "2026-10-29T21:01:41",
+  "actualizado": "2026-10-29T22:01:13",
   "dia": 6,
-  "quedan": 96.31,
+  "quedan": 96.3,
   "ganado": 0.0,
-  "gasto_medio_dia": 0.6158,
+  "gasto_medio_dia": 0.6167,
   "dias_de_vida_restantes": 156,
-  "turnos": 71,
+  "turnos": 72,
   "posts": 0,
   "respuestas": 0,
   "migas": 5,
@@ -48,8 +48,8 @@
     },
     {
       "fecha": "2026-10-29",
-      "pensado": 0.1373,
-      "turnos": 14,
+      "pensado": 0.1429,
+      "turnos": 15,
       "posts": 0,
       "respuestas": 0
     }
@@ -58,9 +58,9 @@
     "modelo": "Sony Xperia 5 II (2020)",
     "android": "12",
     "nucleos": 8,
-    "temperatura_c": 30.6,
+    "temperatura_c": 31.0,
     "ram_total_gb": 7.5,
-    "ram_libre_gb": 3.1,
+    "ram_libre_gb": 3.0,
     "disco_total_gb": 239,
     "disco_usado_gb": 16.8
   }
