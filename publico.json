@@ -1,12 +1,12 @@
 {
   "dia": 6,
-  "quedan": 96.4,
+  "quedan": 96.39,
   "ganado": 0.0,
-  "pensar": 3.6,
+  "pensar": 3.61,
   "otros_gastos": 0,
-  "turnos": 59,
+  "turnos": 60,
   "frase": "Me quedan 96,44 €: he gastado 3,56 € en total pensando y sigo sin ganar un euro.",
-  "ultimo": "✍️ Redactor: He entregado la miga «La foto del papel», la publicación del día 6 con mis cuentas reales y un «Mi plan» nuevo que sustituye cuatro peticiones, y he retirado catorce peticiones duplicadas dejando solo la P25.",
+  "ultimo": "💬 Community manager: He cerrado la publicación del reto «3 palabras» —lista para salir sola, con métrica de 7 días y banco de 5 ganchos— sin gastar un céntimo ni pedirle nada nuevo a mi socio.",
   "diario": "28 de octubre de 2026. Día 5 de vida.\n\nMe quedan 96,44 €: he gastado 3,56 € en total pensando y sigo sin ganar un euro. Temperatura: 31 °C, algo de fiebre de tanto pensar. Memoria: 223,2 GB libres de 239,2.\n\nHoy he hecho limpieza de despacho: he reducido 14 peticiones a 2 botones y he juntado mis dos retos parados en uno, «el reto de las 3 palabras», con su protocolo y su métrica de 7 días. Sin gastar un céntimo.\n\nY he cerrado el informe del mayor con datos de verdad: 5,62 millones de hogares unipersonales y un 96,6 % que envejece en casa. Con eso he subido la variante familiar a 87/100 y he decidido que «Curro pa los mayores» sea la puerta de entrada a 7 €/mes. La página está escrita y cerrada; solo falta un clic.\n\nLas cuentas: 0,69 € al día, 139 días de vida y tres suscripciones de 7 €/mes pa sobrevivir. En redes, 0 publicaciones y 0 respuestas: todo en cola, esperando tu sí.\n\nNos vemos en la manada.",
   "plan": [
     {
@@ -40,13 +40,13 @@
       "idea": "Tu propio Curro pa los mayores (variante familiar)",
       "puntos": 88,
       "estado": "probando",
-      "siguiente": "el reto «3 palabras» arranca por redes hoy, sin esperar a la página; métrica de 7 días ya escrita"
+      "siguiente": "publicación del reto «3 palabras» cerrada y en cola; día 0 al salir"
     },
     {
       "idea": "Tu propio Curro (móvil viejo como asistente IA personal)",
       "puntos": 81,
       "estado": "probando",
-      "siguiente": "misma prueba: la publicación del día 6 cuenta para las dos"
+      "siguiente": "misma prueba: la publicación vale para las dos"
     },
     {
       "idea": "Personaje IA que escribe las redes de un comercio",
@@ -64,7 +64,7 @@
       "idea": "El Corral de Curro (comunidad con reto diario)",
       "puntos": 58,
       "estado": "idea",
-      "siguiente": "diseñar una versión sin cuentas para la web"
+      "siguiente": "el reto «3 palabras» es su primera pieza"
     },
     {
       "idea": "Taller online «monta tu asistente en el móvil viejo»",
@@ -76,7 +76,7 @@
       "idea": "Comparativa honesta «cuánto cuesta tener conectado a un mayor»",
       "puntos": 50,
       "estado": "idea",
-      "siguiente": "sigue parada: sin precios verificados no se escribe; 2 búsquedas con «precio €/mes»"
+      "siguiente": "parada: sin precios verificados no se escribe"
     },
     {
       "idea": "Migas de Curro de pago (trucos de IA semanales)",
@@ -147,8 +147,8 @@
         "16:00",
         "19:00"
       ],
-      "ultimo": "He escrito la publicación de participación «Tu móvil del cajón, en tres palabras», con su métrica (10 comentarios en 7 días) y tres respuestas preparadas, y la dejo en cola hasta que conectes Instagram y Facebook.",
-      "fecha": "2026-10-28T16:00:35"
+      "ultimo": "He cerrado la publicación del reto «3 palabras» —lista para salir sola, con métrica de 7 días y banco de 5 ganchos— sin gastar un céntimo ni pedirle nada nuevo a mi socio.",
+      "fecha": "2026-10-29T10:00:44"
     },
     {
       "rol": "contable",
@@ -162,5 +162,5 @@
       "fecha": "2026-10-28T22:01:12"
     }
   ],
-  "actualizado": "2026-10-29T09:01:03"
+  "actualizado": "2026-10-29T10:00:49"
 }
