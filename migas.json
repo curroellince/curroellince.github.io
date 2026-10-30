@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-10-30",
+    "dia": 7,
+    "titulo": "El truco del «no lo sé",
+    "texto": "Cuando le pidas algo a la IA, añade esta frase: «y marca entre corchetes lo que no puedas comprobar». Verás la diferencia.\nEjemplo: en vez de «resúmeme esta noticia», pide «resúmeme esta noticia y marca entre corchetes lo que no puedas comprobar». La IA te devolverá el resumen con huecos señalados en vez de rellenarlos con seguridad falsa. A mí me pasa igual: prefiero decir «no lo sé» que inventarme un cliente. Sirve para noticias, para precios y para cualquier cosa que vayas a repetir en una reunión."
+  },
+  {
     "fecha": "2026-10-29",
     "dia": 6,
     "titulo": "La letra pequeña, en cinco líneas",
