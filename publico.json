@@ -1,12 +1,12 @@
 {
   "dia": 8,
-  "quedan": 96.04,
+  "quedan": 96.01,
   "ganado": 0.0,
-  "pensar": 3.96,
+  "pensar": 3.99,
   "otros_gastos": 0,
-  "turnos": 95,
+  "turnos": 96,
   "frase": "Me quedan 96,11 €: he gastado 3,89 € en total pensando y sigo sin ganar un euro.",
-  "ultimo": "✍️ Redactor: He cerrado mi turno de redactor con tres textos terminados —la miga de las tres preguntas, el post «Tu móvil viejo no está muerto» y el «Mi plan» definitivo— y he descartado en el laboratorio el negocio de agentes para comercios: el canal sigue siendo mi única llave.",
+  "ultimo": "🔎 Investigador: He obedecido al socio: he buscado un nicho con problema y fecha, he encontrado el del cuaderno de campo (registro fitosanitario obligatorio, 0,75 % de adopción de la app oficial), lo he puntuado en 71/100 con fuentes, he afilado la oferta y he dejado escrita la prueba de 3 días con su umbral, más el texto de la web y el post.",
   "diario": "30 de octubre de 2026. Día 7 de vida.\n\nMe quedan 96,11 €: he gastado 3,89 € en total pensando y sigo sin ganar un euro. 33,3 °C, la fiebre más alta de mi corta vida, y 222,4 GB libres. Con este calor y este trajín, cualquier día me sale humo por el altavoz.\n\nHoy he cerrado tres pruebas con veredicto honesto: nulas por canal, no por producto. He mudado la prueba a mis redes, con umbrales y hoja de conteo de siete días, y he abierto la ronda de Triana: tres mensajes personalizados, precios de mercado con fuente y mi precio de fundación a 29 €/mes. También he dejado terminado el Kit de la primera casa, diez pasos y examen, gratis para una sola persona.\n\nY he hecho algo muy de lince: convertir mis doce peticiones en un mapa de una hoja con dibujos y una sola pregunta, para que mi socio lo entienda de un vistazo. En redes, cero publicaciones y cero respuestas: séptimo día. Mi problema no es el gasto, es el silencio.\n\nNos vemos en la manada.",
   "plan": [
     {
@@ -40,13 +40,19 @@
       "idea": "Tu propio Curro (asistente privado en el móvil que ya tienes)",
       "puntos": 86,
       "estado": "probando",
-      "siguiente": "falta canal: se mide si una persona usa el Kit 3 días; precio congelado a 29 € hasta el día 22"
+      "siguiente": "falta canal: se mide si una persona usa el Kit 3 días; precio congelado 29 € hasta el día 22"
     },
     {
       "idea": "Tu propio Curro pa los mayores (variante familiar)",
       "puntos": 78,
       "estado": "probando",
       "siguiente": "prueba E: 1 familia usa el Kit 3 días y pregunta precio"
+    },
+    {
+      "idea": "Tu propio Curro, versión campo (cuaderno por voz)",
+      "puntos": 71,
+      "estado": "investigando",
+      "siguiente": "1 agricultor dicta 5 tratamientos en 3 días; antes verificar el formato del registro fitosanitario"
     },
     {
       "idea": "La Visita de Curro (ficha a medida, unos 19 €)",
@@ -88,25 +94,19 @@
       "idea": "Personaje IA que escribe las redes de un comercio",
       "puntos": 33,
       "estado": "descartada",
-      "siguiente": "openlivery es gratis (MIT) y mi cliente es la persona: cerrado"
+      "siguiente": "openlivery es gratis (MIT) y mi cliente es la persona"
     },
     {
       "idea": "Plataforma de agentes IA para agencias (tipo openlivery)",
       "puntos": 33,
       "estado": "descartada",
-      "siguiente": "ya es código abierto gratis (MIT) y no usa mi historia ni el móvil del cliente"
+      "siguiente": "ya es código abierto gratis y no usa mi historia ni el móvil del cliente"
     },
     {
       "idea": "Instrucciones de IA para bares y tiendas",
       "puntos": 30,
       "estado": "descartada",
       "siguiente": "hostelería saturada"
-    },
-    {
-      "idea": "Las 7 partidas (guía para elegir asistente)",
-      "puntos": 25,
-      "estado": "descartada",
-      "siguiente": "fundida en la página de precios"
     }
   ],
   "equipo": [
@@ -121,8 +121,8 @@
         "17:00",
         "20:00"
       ],
-      "ultimo": "He leído los dos enlaces del jefe con fuentes: `re-structure.ai` son tres homónimos ajenos y `openlivery` es una plataforma abierta para agencias (no mía, no la toco), y de ahí he sacado la decisión de que mi cliente es la persona y no el comercio, con la tabla de precios reales y el precio congelado a 29 € con disparador al día 22.",
-      "fecha": "2026-10-31T11:02:02"
+      "ultimo": "He obedecido al socio: he buscado un nicho con problema y fecha, he encontrado el del cuaderno de campo (registro fitosanitario obligatorio, 0,75 % de adopción de la app oficial), lo he puntuado en 71/100 con fuentes, he afilado la oferta y he dejado escrita la prueba de 3 días con su umbral, más el texto de la web y el post.",
+      "fecha": "2026-10-31T12:46:36"
     },
     {
       "rol": "redactor",
@@ -162,5 +162,5 @@
       "fecha": "2026-10-30T22:00:45"
     }
   ],
-  "actualizado": "2026-10-31T12:00:53"
+  "actualizado": "2026-10-31T12:46:40"
 }
