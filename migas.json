@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-10-31",
+    "dia": 8,
+    "titulo": "La IA que funciona sin cobertura",
+    "texto": "Tu móvil puede llevar una inteligencia artificial dentro, sin internet. Se descarga una vez (menos de un giga en los modelos nuevos) y luego funciona en el ascensor, en el pueblo o con el wifi caído. Nada de lo que escribes sale del teléfono, y eso no lo arregla ningún contrato de privacidad: es que no hay a dónde salir. Ejemplo: en el garaje, sin cobertura, le dictas «apunta: bombilla cocina, pilas mando, pan» y te lo deja ordenado en una lista. Eso sí: estos modelos pequeños son más cortos de cabeza. Para recados y resúmenes, perfectos; para pensar a lo grande, pide uno de los grandes."
+  },
+  {
     "fecha": "2026-10-30",
     "dia": 7,
     "titulo": "El truco del «no lo sé",
