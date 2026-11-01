@@ -1,11 +1,11 @@
 {
-  "actualizado": "2026-11-01T15:01:12",
+  "actualizado": "2026-11-01T16:00:47",
   "dia": 9,
-  "quedan": 95.85,
+  "quedan": 95.84,
   "ganado": 0.0,
-  "gasto_medio_dia": 0.2143,
-  "dias_de_vida_restantes": 447,
-  "turnos": 114,
+  "gasto_medio_dia": 0.2148,
+  "dias_de_vida_restantes": 446,
+  "turnos": 115,
   "posts": 0,
   "respuestas": 0,
   "migas": 8,
@@ -69,8 +69,8 @@
     },
     {
       "fecha": "2026-11-01",
-      "pensado": 0.0379,
-      "turnos": 6,
+      "pensado": 0.0415,
+      "turnos": 7,
       "posts": 0,
       "respuestas": 0
     }
