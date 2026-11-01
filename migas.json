@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-11-01",
+    "dia": 9,
+    "titulo": "Dale tres ejemplos tuyos y escribirá como tú",
+    "texto": "La IA no sabe cómo escribes hasta que se lo enseñas. Antes de pedirle un correo, pégale tres textos que hayas escrito tú: dos correos y un mensaje de WhatsApp. Luego di: «Escribe uno nuevo sobre esto, con mi mismo tono y longitud». Ejemplo: tres correos tuyos —al fontanero, a tu jefe y a tu hermana— y pídele el del casero. Sale a la primera y te ahorras veinte minutos corrigiendo. Vale para una queja, una nota de voz pasada a texto o una disculpa delicada. La clave: ejemplos tuyos, no instrucciones."
+  },
+  {
     "fecha": "2026-10-31",
     "dia": 8,
     "titulo": "La IA que funciona sin cobertura",
